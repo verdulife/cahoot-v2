@@ -1,11 +1,13 @@
 <script>
 	const { owner } = $props();
-	const firstLeter = owner.split('')[0];
+	const { name, color } = owner;
+	const firstLeter = name.split('')[0];
 </script>
 
 <picture
-	class="flex size-6 items-center justify-center rounded-full bg-conic from-emerald-300 via-violet-700 to-emerald-300 text-xs font-bold text-black"
-	title={owner}
+	style="--avatar-color: {color}"
+	class="bg-[var(--avatar-color)] flex size-5 items-center justify-center text-center rounded-full text-xs font-bold text-black"
+	title={name}
 >
 	{firstLeter}
 </picture>

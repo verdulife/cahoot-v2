@@ -1,4 +1,4 @@
-import { type TaskType, TaskPriority, TaskState } from '@/lib/types';
+import { type TaskType, TaskState } from '@/lib/types';
 
 export const mockTasks: TaskType[] = [
   {
@@ -6,59 +6,91 @@ export const mockTasks: TaskType[] = [
     client: 'Cliente 1',
     description: 'Tarea 1',
     subtasks: [],
-    owner: 'Verdu',
+    owner: {
+      name: "Verdu",
+      color: "gold",
+    },
     state: TaskState.THIS_WEEK,
     timeout: 3600,
     createdAt: '2023-01-01',
     updatedAt: '2023-01-01',
-    priority: TaskPriority.LOW,
   },
   {
     id: '2',
     client: 'Cliente 2',
     description: 'Tarea 2',
     subtasks: [],
-    owner: 'Pablo',
+    owner: {
+      name: 'Pablo',
+      color: "green",
+    },
     state: TaskState.THIS_WEEK,
     timeout: 60,
     createdAt: '2023-01-01',
     updatedAt: '2023-01-01',
-    priority: TaskPriority.LOW,
   },
   {
     id: '3',
     client: 'Cliente 3',
     description: 'Tarea 3',
-    subtasks: ['Subtarea 1', 'Subtarea 2'],
-    owner: 'Marcelo',
+    subtasks: [
+      {
+        id: '1',
+        description: 'Subtarea 1',
+        done: true,
+      },
+      {
+        id: '2',
+        description: 'Subtarea 2',
+        done: false,
+      },
+    ],
+    owner: {
+      name: 'Marcelo',
+      color: "red",
+    },
     state: TaskState.DONE,
     timeout: 60,
     createdAt: '2023-01-01',
     updatedAt: '2023-01-01',
-    priority: TaskPriority.LOW,
   },
   {
     id: '4',
     client: 'Cliente 4',
     description: 'Tarea 4',
-    subtasks: ['Subtarea 1', 'Subtarea 2'],
-    owner: 'Alexandra',
+    subtasks: [
+      {
+        id: '1',
+        description: 'Subtarea 1',
+        done: true,
+      },
+      {
+        id: '2',
+        description: 'Subtarea 2',
+        done: false,
+      },
+    ],
+    owner: {
+      name: "Alexandra",
+      color: "blue",
+    },
     state: TaskState.TODAY,
     timeout: 60,
     createdAt: '2023-01-01',
     updatedAt: '2023-01-01',
-    priority: TaskPriority.LOW,
   },
   {
     id: '5',
     client: 'Cliente 5',
     description: 'Tarea 5',
-    subtasks: ['Subtarea 1', 'Subtarea 2'],
-    owner: 'Verdu',
+    subtasks: [],
+    owner: {
+      name: "Verdu",
+      color: "gold",
+    },
     state: TaskState.BACKLOG,
     timeout: 60,
     createdAt: '2023-01-01',
     updatedAt: '2023-01-01',
-    priority: TaskPriority.LOW,
   },
 ];

@@ -8,7 +8,7 @@
 	const groupedTasks = Object.groupBy(tasks, (task) => task.state);
 </script>
 
-<main class="grid flex-1 grid-cols-4 gap-4 p-6">
+<main class="inline-flex gap-4 p-6 h-full">
 	<Table title={COLUMNS.BACKLOG} tasks={groupedTasks[TaskState.BACKLOG]} />
 	<Table title={COLUMNS.THIS_WEEK} tasks={groupedTasks[TaskState.THIS_WEEK]} />
 	<Table title={COLUMNS.TODAY} tasks={groupedTasks[TaskState.TODAY]} />

@@ -5,21 +5,23 @@ export enum TaskState {
   DONE = 'DONE',
 };
 
-export enum TaskPriority {
-  LOW = 'LOW',
-  MEDIUM = 'MEDIUM',
-  HIGH = 'HIGH',
-};
+export interface SubtaskType {
+  id: string;
+  description: string;
+  done: boolean;
+}
 
 export interface TaskType {
   id: string;
   client: string;
   description: string;
-  subtasks: string[];
-  owner: string;
+  subtasks: SubtaskType[];
+  owner: {
+    name: string;
+    color: string;
+  };
   state: TaskState;
   timeout: number;
   createdAt: string;
   updatedAt: string;
-  priority: TaskPriority;
 };
