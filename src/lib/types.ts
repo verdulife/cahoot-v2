@@ -5,6 +5,12 @@ export enum TaskState {
   DONE = 'DONE',
 };
 
+export enum WindowStates {
+  TASK = 'TASK',
+  DAY = 'DAY',
+  FULL = 'FULL',
+};
+
 export interface SubtaskType {
   id: string;
   description: string;
